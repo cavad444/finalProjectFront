@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/products";
+import { CssBaseline, Typography } from "@mui/material";
+import { Container } from "@mui/material";
+
 import Catalog from "../../features/catalog/Catalog";
+import Header from "./Header";
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -10,11 +14,27 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
+  function addProduct() {
+    setProducts((prevState) => [
+      ...prevState,
+      {
+        id: prevState.length + 101,
+        name: "product" + (prevState.length + 1),
+        price: prevState.length * 100 + 100,
+        brand: "some brand",
+        description: "some desc",
+        pictureUrl: "http://picsum.photos./200",
+      },
+    ]);
+  }
   return (
-    <div>
-      <h1>Az Store</h1>
-      <Catalog products={products} />
-    </div>
+    <>
+      <CssBaseline />
+      <Header />
+      <Container>
+        <Catalog products={products} addProduct={addProduct} />
+      </Container>
+    </>
   );
 }
 
