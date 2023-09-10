@@ -12,6 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import agent from "../../app/api/agent";
+import NotFound from "../../app/errors/NotFound";
+import LoadingComponents from "../../app/layout/LoadingComponents";
 function ProductDetails() {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
@@ -25,11 +27,11 @@ function ProductDetails() {
   }, [id]);
 
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <LoadingComponents message="Loading product..." />;
   }
 
   if (!product) {
-    return <h3>Product not found.</h3>;
+    return <NotFound />;
   }
   return (
     <Grid container spacing={6}>
