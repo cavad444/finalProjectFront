@@ -9,7 +9,7 @@ import {
   setPageNumber,
   setProductParams,
 } from "./catalogSlice";
-import { Box, Grid, Pagination, Paper, Typography } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import ProductSearch from "./ProductSearch";
 import RadioGroupButton from "../../app/components/RadioGroupButton";
 import CheckboxButtons from "../../app/components/CheckboxButtons";
