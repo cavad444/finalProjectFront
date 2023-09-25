@@ -6,7 +6,7 @@ import AppTextInput from "../../app/components/AppTextInput";
 import AppCheckbox from "../../app/components/AppCheckbok";
 
 export default function AddressForm() {
-  const { control } = useFormContext();
+  const { control, formState } = useFormContext();
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -37,6 +37,7 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12}>
           <AppCheckbox
+            disabled={!formState.isDirty}
             name="saveAddress"
             label="Save this as the default address"
             control={control}
