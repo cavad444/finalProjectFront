@@ -51,6 +51,10 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          "@media (max-width: 600px)": {
+            flexDirection: "column", // Adjust layout for small screens
+            alignItems: "center",
+          },
         }}
       >
         <Box display="flex" alignItems="center">
@@ -60,14 +64,23 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           <Switch checked={darkMode} onChange={handleThemeChange} />
         </Box>
 
-        <List sx={{ display: "flex" }}>
+        <List
+          sx={{
+            display: "flex",
+            "@media (max-width: 600px)": {
+              flexDirection: "column", // Adjust layout for small screens
+              alignItems: "center",
+              padding: "0",
+            },
+          }}
+        >
           {midLinks.map(({ title, path }) => (
             <ListItem component={NavLink} to={path} key={path} sx={navStyles}>
               {title.toUpperCase()}
             </ListItem>
           ))}
           {user && user.roles?.includes("Admin") && (
-            <ListItem component={NavLink} to={"/inventory"} sx={navStyles}>
+            <ListItem component={NavLink} to="/inventory" sx={navStyles}>
               INVENTORY
             </ListItem>
           )}
@@ -88,7 +101,16 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           {user ? (
             <SignedInMenu />
           ) : (
-            <List sx={{ display: "flex" }}>
+            <List
+              sx={{
+                display: "flex",
+                "@media (max-width: 600px)": {
+                  flexDirection: "column", // Adjust layout for small screens
+                  alignItems: "center",
+                  padding: "0",
+                },
+              }}
+            >
               {rightLinks.map(({ title, path }) => (
                 <ListItem
                   component={NavLink}
