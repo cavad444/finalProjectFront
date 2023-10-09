@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Slider from "react-slick";
+
 function HomePage() {
   const settings = {
     dots: true,

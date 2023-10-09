@@ -13,21 +13,20 @@ export default function BasketPage() {
   }
   return (
     <>
-      <BasketTable items={basket.items} />
-      <Grid container>
-        <Grid item xs={6} />
-        <Grid item xs={6}>
-          <BasketSummary />
-          <Button
-            component={Link}
-            to="/checkout"
-            variant="contained"
-            size="large"
-            fullWidth
-          >
-            Checkout
-          </Button>
-        </Grid>
+      <Grid item xs={12} md={6}>
+        <BasketTable items={basket.items} />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <BasketSummary />
+        <Button
+          component={Link}
+          to="/checkout"
+          variant="contained"
+          size="large"
+          fullWidth
+        >
+          Checkout
+        </Button>
       </Grid>
     </>
   );

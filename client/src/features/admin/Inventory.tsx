@@ -53,7 +53,6 @@ export default function Inventory() {
 
   if (editMode)
     return <ProductForm product={selectedProduct} cancelEdit={cancelEdit} />;
-
   return (
     <>
       <Box display="flex" justifyContent="space-between">
