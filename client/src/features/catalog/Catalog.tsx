@@ -23,7 +23,7 @@ export default function Catalog() {
 
   return (
     <Grid container columnSpacing={4}>
-      <Grid item xs={3}>
+      <Grid item xs={12} sm={3}>
         <Paper sx={{ mb: 2 }}>
           <ProductSearch />
         </Paper>
@@ -45,7 +45,6 @@ export default function Catalog() {
             }
           />
         </Paper>
-
         <Paper sx={{ mb: 2, p: 2 }}>
           <CheckboxButtons
             items={types}
@@ -56,15 +55,14 @@ export default function Catalog() {
           />
         </Paper>
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={12} sm={9}>
         <ProductList products={products} />
       </Grid>
-      <Grid item xs={3} />
-      <Grid item xs={9} sx={{ mb: 2 }}>
+      <Grid item xs={12} sx={{ mb: 2 }}>
         {metaData && (
           <AppPagination
             metaData={metaData}
-            onPageChange={(page: number) =>
+            onPageChange={(page) =>
               dispatch(setPageNumber({ pageNumber: page }))
             }
           />

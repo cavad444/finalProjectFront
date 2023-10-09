@@ -15,7 +15,7 @@ const ProductSearch = () => {
       label="Search products"
       variant="outlined"
       value={searchTerm || ""}
-      onChange={(event: any) => {
+      onChange={(event) => {
         setSearchTerm(event.target.value);
         debouncedSearch(event);
       }}

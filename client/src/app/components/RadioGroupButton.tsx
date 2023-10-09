@@ -22,7 +22,7 @@ const RadioGroupButton = ({ options, onChange, selectedValue }: Props) => {
             label={label}
             key={value}
           />
-        ))}
+        ))}{" "}
       </RadioGroup>
     </FormControl>
   );
