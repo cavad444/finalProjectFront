@@ -52,7 +52,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           justifyContent: "space-between",
           alignItems: "center",
           "@media (max-width: 600px)": {
-            flexDirection: "column", // Adjust layout for small screens
+            flexDirection: "column",
             alignItems: "center",
           },
         }}
@@ -68,7 +68,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
           sx={{
             display: "flex",
             "@media (max-width: 600px)": {
-              flexDirection: "column", // Adjust layout for small screens
+              flexDirection: "column",
               alignItems: "center",
               padding: "0",
             },
@@ -105,7 +105,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
               sx={{
                 display: "flex",
                 "@media (max-width: 600px)": {
-                  flexDirection: "column", // Adjust layout for small screens
+                  flexDirection: "column",
                   alignItems: "center",
                   padding: "0",
                 },
